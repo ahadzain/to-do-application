@@ -1,9 +1,13 @@
 const List = require('../models/list')
 
 function toDoRoutes(fastify,options,done){
+    
+    fastify.get('/',(req,res)=> {
+        res.send('hello there!')
+    })    
 
     //read event
-    fastify.get('/',(req,res)=> {
+    fastify.get('/events',(req,res)=> {
         result = List.find().lean().select("eNo event").exec(function(err,result){
             res.send(result)
         })
