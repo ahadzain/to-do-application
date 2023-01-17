@@ -1,6 +1,6 @@
 const fastify = require('fastify')({logger:true})
 
-const PORT = 80
+const PORT = 3000
 
 fastify.register(require('./routes/list'))
 
